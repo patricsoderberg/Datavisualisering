@@ -1,0 +1,48 @@
+{
+  "rules": {
+    "class-name": true,
+    "curly": true,
+    "eofline": true,
+    "forin": false,
+    "indent": [
+      true,
+      "spaces"
+    ],
+    "interface-name": true,
+    "max-line-length": [
+      true,
+      140
+    ],
+    "no-any": false,
+    "no-consecutive-blank-lines": true,
+    "no-duplicate-key": true,
+    "no-empty": false,
+    "no-eval": true,
+    "no-unreachable": true,
+    "no-internal-module": false,
+    "no-unused-expression": true,
+    "no-unused-variable": true,
+    "no-require-imports": false,
+    "semicolon": true,
+    "switch-default": false,
+    "trailing-comma": [
+      true,
+      {
+        "multiline": "always",
+        "singleline": "never"
+      }
+    ],
+    "triple-equals": [
+      true,
+      "allow-null-check"
+    ],
+    "use-strict": [
+      true,
+      "check-module",
+      "check-function"
+    ],
+    "variable-name": [
+      false
+    ]
+  }
+}
