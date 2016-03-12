@@ -2,7 +2,32 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+<script>$( document ).ready(function() {
+$(function () {
+    $.ajax({
+        type: "POST",
+url:"http://api.scb.se/OV0104/v1/doris/sv/ssd/START/SF/SF0101/ForaldraPenning",
+        data: '{"query":[{"code":"Region","selection":{"filter":"vs:RegionRiket99","values":["00"]}},{"code":"Kon","selection":{"filter":"item","values":["1","2"]}},{"code":"ContentsCode","selection":{"filter":"item","values":["SF0101AG"]}}],"response":{"format":"json"}}',
+        success: function(newInfo){
+            console.log(newInfo);
+        },
+        error: function(){
+            alert('hämta data från API');}
+    });      
+    });
+    /*angular.module("app",               ["chart.js"]).controller("LineCtrl", function ($scope) {
 
+  $scope.labels = ["1999", "2000", "2001", "2002", "2003", "2004", "2005", "2006", "2007", "2008", "2009", "2010", "2011", "2012", "2013", "2014"];
+  $scope.series = ['Series A', 'Series B'];
+  $scope.data = [
+    [65, 59, 80, 81, 56, 55, 40],
+    [28, 48, 40, 19, 86, 27, 90]
+  ];
+  $scope.onClick = function (points, evt) {
+    console.log(points, evt);
+  };
+});*/
+});</script>
 
     <!-- Footer -->
     <footer>
@@ -13,12 +38,3 @@
             </div>
         </div>
     </footer>
-
-    <!-- jQuery -->
-    <script src="js/jquery.js"></script>
-
-    <!-- Bootstrap Core JavaScript -->
-    <script src="js/bootstrap.min.js"></script>
-
-    <!-- Custom Theme JavaScript -->
-    <script src="js/clean-blog.min.js"></script>
