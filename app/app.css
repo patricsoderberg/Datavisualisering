@@ -28,3 +28,9 @@
   content: "";
   padding: 0;
 }
+
+.chart , .chart-container {
+  width: 50%;
+  height: 40%;
+  
+} 

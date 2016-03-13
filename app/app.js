@@ -7,6 +7,9 @@ angular.module('myApp', [
   'myApp.view1',
   'myApp.view2',
   'myApp.version',
+  'ngChart',
+  'ngChartOne',
+  'ngChartTwo',
   
 ]).
 config(['$routeProvider', function($routeProvider) {

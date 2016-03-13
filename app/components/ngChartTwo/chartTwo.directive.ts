@@ -4,7 +4,7 @@
 /**
  * ChartController
  */
-class ChartController {
+class ChartTwoController {
   dataSet:any;
   chartNr:any;
   
@@ -32,13 +32,13 @@ class ChartController {
 /**
  * ChartDirective 
  */
-class ChartDirective implements ng.IDirective {
-  static IID = 'ngChart';
+class ChartTwoDirective implements ng.IDirective {
+  static IID = 'ngChartTwo';
   public restrict:string = 'AE';
-  public templateUrl:string = 'components/ngChart/ngChart.template.html';
-         controller:any = ChartController;
-  public controllerAs:string = 'chartCtrl';
+  public templateUrl:string = 'components/ngChartTwo/ngChartTwo.template.html';
+         controller:any = ChartTwoController;
+  public controllerAs:string = 'chartTwoCtrl';
 }
 
-angular.module( 'ngChart', ['chart.js'] )
-  .directive( ChartDirective.IID, () => new ChartDirective() ); 
+angular.module( 'ngChartTwo', ['chart.js'] )
+  .directive( ChartTwoDirective.IID, () => new ChartTwoDirective() ); 

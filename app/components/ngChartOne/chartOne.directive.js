@@ -3,8 +3,8 @@
 /**
  * ChartController
  */
-var ChartController = (function () {
-    function ChartController($scope) {
+var ChartOneController = (function () {
+    function ChartOneController($scope) {
         $scope.labels = ["January", "February", "March", "April", "May", "June", "July"];
         $scope.series = ['Series A', 'Series B'];
         $scope.data = [
@@ -18,20 +18,20 @@ var ChartController = (function () {
             console.log(points, evt);
         };
     }
-    return ChartController;
+    return ChartOneController;
 })();
 /**
  * ChartDirective
  */
-var ChartDirective = (function () {
-    function ChartDirective() {
+var ChartOneDirective = (function () {
+    function ChartOneDirective() {
         this.restrict = 'AE';
-        this.templateUrl = 'components/ngChart/ngChart.template.html';
-        this.controller = ChartController;
-        this.controllerAs = 'chartCtrl';
+        this.templateUrl = 'components/ngChartOne/ngChartOne.template.html';
+        this.controller = ChartOneController;
+        this.controllerAs = 'chartOneCtrl';
     }
-    ChartDirective.IID = 'ngChart';
-    return ChartDirective;
+    ChartOneDirective.IID = 'ngChartOne';
+    return ChartOneDirective;
 })();
-angular.module('ngChart', ['chart.js'])
-    .directive(ChartDirective.IID, function () { return new ChartDirective(); });
+angular.module('ngChartOne', ['chart.js'])
+    .directive(ChartOneDirective.IID, function () { return new ChartOneDirective(); });
