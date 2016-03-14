@@ -7,8 +7,9 @@
 class ChartController {
   dataSet:any;
   chartNr:any;
+  chart1:any;
   
-  constructor($scope) {
+  constructor($scope, $http) {
     $scope.labels = ["January", "February", "March", "April", "May", "June", "July"];
     $scope.series = ['Series A', 'Series B'];
     $scope.data = [
@@ -22,6 +23,49 @@ class ChartController {
     $scope.onClick = function (points, evt) {
       console.log(points, evt);
     }; 
+
+     var data = $http({
+      method: 'GET',
+      url: 'http://api.scb.se/OV0104/v1/doris/sv/ssd/START/SF/SF0101/ForaldraPenning',
+      headers: ' ',
+        data: {
+          "query": [
+            {
+              "code": "Region",
+              "selection": {
+                "filter": "vs:RegionRiket99",
+                "values": []
+              }
+            },
+            {
+              "code": "Kon",
+              "selection": {
+                "filter": "item",
+                "values": [
+                  "1",
+                  "2",
+                ],
+              },
+            },
+           ],
+          },
+           
+        
+    }).then(function successCallback(response) {
+        console.log(response);
+        angular.forEach(response,function (dataSet) {
+          if (data.key === "1") 
+          {
+          this.chart1.men = "data.value";
+          }
+          console.log(dataSet);  
+          console.log("$scope.chart1");  
+          
+        })
+      }, function errorCallback(response) {
+        alert('somehing went wrong');
+      });
+      console.log(data)
 
    }
     
