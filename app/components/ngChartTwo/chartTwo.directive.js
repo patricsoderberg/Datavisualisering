@@ -5,12 +5,12 @@
  */
 var ChartTwoController = (function () {
     function ChartTwoController($scope) {
-      $scope.labels2 = ['2014'];
-        $scope.series2 = ['MAN', 'KVINNA'];
+      $scope.labels2 = ["2014"];
+        $scope.series2 = ['MÄN', 'KVINNOR'];
 
         $scope.data2 = [
-    [65],
-    [28]
+    [352.2],
+    [272.4]
   ];
     function addUserValue ($scope, userValue) {
         console.log("jag kör")
