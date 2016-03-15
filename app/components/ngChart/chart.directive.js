@@ -17,7 +17,7 @@ var ChartController = (function () {
         $scope.onClick = function (points, evt) {
             console.log(points, evt);
         };
-        var data = $http({
+      /*  var data = $http({
             method: 'GET',
             url: 'http://api.scb.se/OV0104/v1/doris/sv/ssd/START/SF/SF0101/ForaldraPenning',
             headers: ' ',
@@ -54,7 +54,7 @@ var ChartController = (function () {
         }, function errorCallback(response) {
             alert('somehing went wrong');
         });
-        console.log(data);
+        console.log(data);*/
     }
     return ChartController;
 })();

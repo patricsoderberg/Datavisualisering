@@ -19,8 +19,21 @@ $(function () {
         type: "POST",
 url:"http://api.scb.se/OV0104/v1/doris/sv/ssd/START/SF/SF0101/ForaldraPenning",
         data: '{"query":[{"code":"Region","selection":{"filter":"vs:RegionRiket99","values":["00"]}},{"code":"Kon","selection":{"filter":"item","values":["1","2"]}},{"code":"ContentsCode","selection":{"filter":"item","values":["SF0101AG"]}}],"response":{"format":"json"}}',
-        success: function(newInfo){
-            console.log(newInfo);
+        success: function(dataSet){
+            for ( var i=0; i<dataSet.data.length; i++){
+                console.log(dataSet.data[i]);
+            }
+            /*console.log(dataSet);*/
+            /*for (i in dataSet.data) {
+            console.log(dataSet.data[i]);
+                var data = dataSet.data ;
+            data.forEach(row, function (key,value) {
+                if (data.key[a] === 1) {
+                    console.log(dataSet.data.key[a]);
+
+                }
+            })
+            };*/
         },
         error: function(){
             alert('hämta data från API');}
