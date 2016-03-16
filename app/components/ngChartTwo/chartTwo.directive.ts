@@ -1,29 +1,52 @@
 /// <reference path="../../../typings/tsd.d.ts" />
-'use strict';
 
 /**
  * ChartController
  */
 class ChartTwoController {
-  dataSet:any;
+  data2:any = [];
   chartNr:any;
   
-  constructor($scope) {
-    $scope.labels = ["January", "February", "March", "April", "May", "June", "July"];
-    $scope.series = ['Series A', 'Series B'];
-    $scope.data = [
-      [65, 59, 80, 81, 56, 55, 40],
-      [28, 48, 40, 19, 86, 27, 90]
-    ];
+  constructor($scope, $timeout) {
+    $scope.labels2 = ["2014"];
+    $scope.series2 = ['MÄN', 'KVINNOR'];
+    $scope.data2 = [
+              [18],
+              [65]
+            ];
     $scope.options = [
       'caleLineWidth: 10',
       
     ];
+    $scope.testdata = [{
+        'room': 'room0',
+        'users': '10'
+    }];
+    console.log($scope.testdata);
+    
+    
     $scope.onClick = function (points, evt) {
       console.log(points, evt);
     }; 
+    
+    
+    
 
+   console.log($scope.data2);
+   
+     $scope.addUserValue = function (userValue) {
+        console.log("jag kör");
+        
+            $scope.data2.push([userValue]);
+            $scope.series2.push("Din lön");
+        console.log($scope.data2);
+                
+    }   
+    
    }
+   
+
+      
     
  }
   

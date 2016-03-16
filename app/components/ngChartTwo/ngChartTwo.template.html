@@ -1,11 +1,38 @@
-
-
 <div class="barchart">
 <div class="panel-heading">Jämför din årslön år 2014 med medel årslöner för män respektive kvinnor</div>
-<canvas id="bar" class="chart chart-bar"
-  chart-data="data2" chart-labels="labels2" chart-series="series2">
-    </canvas> 
-    
- <input type="text" placeholder="Din års här" ng-model = "userValue">
- <input type="submit" ng-click = "ChartTwoController.addUserValue(userValue)" value="lägg till">  
+<canvas id="bar" 
+  class="chart chart-bar"
+  chart-data="data2" 
+  chart-labels="labels2" 
+  chart-series="series2">
+</canvas> 
+
+ <form class="yourSalary my-input">   
+   <input type="text" 
+   placeholder="Din års här" 
+   ng-model = "userValue"
+   ng-pattern="/^\d+$/" 
+   name="anim"
+   aria-describedby="inputDescription" />
+ 
+ <input 
+  type="submit" 
+  ng-click = "addUserValue(userValue)" 
+  value="lägg till" >  
+ 
+ </form>
+ 
+ <!--<form name="testForm">
+  <input ng-model="addUserValue" ng-pattern="/^\d+$/" name="anim" class="my-input"
+         aria-describedby="inputDescription" />
+</form>
+
+<form name="userForm">
+    <label>Name:
+      <input type="text" name="userName"
+             ng-model="addUserValue"
+             ng-model-options="{ getterSetter: true }" />
+    </label>
+  </form>-->
+ 
 </div>

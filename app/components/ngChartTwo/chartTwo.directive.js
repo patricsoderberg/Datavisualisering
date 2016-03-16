@@ -1,23 +1,35 @@
 /// <reference path="../../../typings/tsd.d.ts" />
-'use strict';
 /**
  * ChartController
  */
 var ChartTwoController = (function () {
-    function ChartTwoController($scope) {
-      $scope.labels2 = ["2014"];
+    function ChartTwoController($scope, $timeout) {
+        this.data2 = [];
+        $scope.val = "1";
+        $scope.labels2 = ["2014"];
         $scope.series2 = ['MÄN', 'KVINNOR'];
-
         $scope.data2 = [
-    [352.2],
-    [272.4]
-  ];
-    function addUserValue ($scope, userValue) {
-        console.log("jag kör")
-        $scope.data2.push(userValue) 
-        
-    }
-        
+            [18],
+            [65]
+        ];
+        $scope.options = [
+            'caleLineWidth: 10',
+        ];
+        $scope.testdata = [{
+                'room': 'room0',
+                'users': '10'
+            }];
+        console.log($scope.testdata);
+        $scope.onClick = function (points, evt) {
+            console.log(points, evt);
+        };
+        console.log($scope.data2);
+        $scope.addUserValue = function (userValue) {
+            console.log("jag kör");
+            $scope.data2.push([userValue]);
+            $scope.series2.push("Din lön");
+            console.log($scope.data2);
+        };
     }
     return ChartTwoController;
 })();
