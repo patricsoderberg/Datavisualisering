@@ -11,3 +11,8 @@ img.logo {display: block;
   background: red;
   color:white;
 }
+
+
+.yourSalary .submit-invalid {
+  opacity: 0.5;
+}

@@ -7,18 +7,22 @@
   chart-series="series2">
 </canvas> 
 
- <form class="yourSalary my-input">   
-   <input type="text" 
+ <form 
+ name="yourSalary"
+ class="yourSalary my-input">   
+ 
+   <input 
    placeholder="Din års här" 
    ng-model = "userValue"
    ng-pattern="/^\d+$/" 
-   name="anim"
    aria-describedby="inputDescription" />
  
- <input 
+ <input
   type="submit" 
   ng-click = "addUserValue(userValue)" 
-  value="lägg till" >  
+  value="lägg till"
+  ng-disabled="yourSalary.$invalid" 
+  ng-class="{ false: 'submit-valid', true: 'submit-invalid'  }[yourSalary.$invalid]" >  
  
  </form>
  
