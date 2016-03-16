@@ -8,11 +8,11 @@ class ChartTwoController {
   chartNr:any;
   
   constructor($scope, $timeout) {
-    $scope.labels2 = ["2014"];
-    $scope.series2 = ['MÄN', 'KVINNOR'];
+    $scope.labels2 = ['Män', 'Kvinor'];
+    $scope.series2 = ['Män', 'Kvinor'];
     $scope.data2 = [
-              [18],
-              [65]
+              ["18", "65"],
+              
             ];
     $scope.options = [
       'caleLineWidth: 10',
@@ -25,20 +25,19 @@ class ChartTwoController {
     console.log($scope.testdata);
     
     
-    $scope.onClick = function (points, evt) {
-      console.log(points, evt);
-    }; 
+    // $scope.onClick = function (points, evt) {
+    //   console.log(points, evt);
+    // }; 
     
     
     
 
    console.log($scope.data2);
    
-     $scope.addUserValue = function (userValue) {
-        console.log("jag kör");
-        
-            $scope.data2.push([userValue]);
+     $scope.addUserValue = function (userValue) {        
+            $scope.data2[0].push(userValue);
             $scope.series2.push("Din lön");
+            $scope.labels2.push("Din lön");
         console.log($scope.data2);
                 
     }   
