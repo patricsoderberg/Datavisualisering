@@ -8,7 +8,7 @@ var ChartTwoController = (function () {
         $scope.labels2 = ['Män', 'Kvinor'];
         $scope.series2 = ['Män', 'Kvinor'];
         $scope.data2 = [
-            ["18", "65"],
+            ["352200", "272400"],
         ];
         $scope.options = [
             'caleLineWidth: 10',
