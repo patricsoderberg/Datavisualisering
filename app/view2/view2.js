@@ -10,6 +10,8 @@ angular.module('myApp.view2', ['ngRoute'])
 }])
 
 .controller('View2Ctrl', [function() {
-      let test = "hej daniel";
-      console.log(test + " det är ett test");
+   function submit () {
+    alert("Tack För ditt meddelande");
+  }
+
 }]);
