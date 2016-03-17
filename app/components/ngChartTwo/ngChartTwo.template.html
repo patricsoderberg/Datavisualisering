@@ -9,21 +9,43 @@
 
 
  <form 
- name="yourSalary"
- class="yourSalary my-input">   
+  name="yourSalary"
+  class="yourSalary my-input">   
  
    <input 
+   required
    placeholder="Din års här" 
-   ng-model = "userValue"
+   ng-model = "yourValue"
    ng-pattern="/^\d+$/" 
    aria-describedby="inputDescription" />
  
  <input
   type="submit" 
-  ng-click = "addUserValue(userValue)" 
+  ng-click = "addUserValue(yourValue, 'Din lön'); showNext = !showNext ; disableButton(1)" 
   value="lägg till"
-  ng-disabled="yourSalary.$invalid" 
+  ng-disabled=" yourSalary.$invalid || isDisabled " 
   ng-class="{ false: 'submit-valid', true: 'submit-invalid'  }[yourSalary.$invalid]" >  
+ 
+ </form>
+
+ <form 
+  ng-hide="!showNext"
+  name="partnersSalary"
+  class="partnersSalary my-input">   
+ 
+  <input 
+    required
+    placeholder="Din sambos års lön" 
+    ng-model = "partnerValue2"
+    ng-pattern="/^\d+$/" 
+    aria-describedby="inputDescription" />
+ 
+  <input
+    type="submit" 
+    ng-click = "addUserValue(partnerValue2, 'Din sambos lön') ; disableButton(2)" 
+    value="lägg till"
+    ng-disabled="partnersSalary.$invalid || isDisabled2" 
+    ng-class="{ false: 'submit-valid', true: 'submit-invalid'  }[partnersSalary.$invalid]" >  
  
  </form>
  

@@ -13,20 +13,27 @@ var ChartTwoController = (function () {
         $scope.options = [
             'caleLineWidth: 10',
         ];
-        $scope.testdata = [{
-                'room': 'room0',
-                'users': '10'
-            }];
-        console.log($scope.testdata);
+        $scope.isDisabled = false;
         // $scope.onClick = function (points, evt) {
         //   console.log(points, evt);
         // }; 
+        $scope.disableButton = function (form) {
+            if (form === 1) {
+                $scope.isDisabled = true;
+                console.log($scope.isDisabled);
+            }
+            else if (form === 2) {
+                $scope.isDisabled2 = true;
+            }
+        };
         console.log($scope.data2);
-        $scope.addUserValue = function (userValue) {
-            $scope.data2[0].push(userValue);
-            $scope.series2.push("Din lön");
-            $scope.labels2.push("Din lön");
-            console.log($scope.data2);
+        $scope.addUserValue = function (userValue, inputLabel) {
+            if (userValue != null) {
+                $scope.data2[0].push(userValue);
+                $scope.series2.push(inputLabel);
+                $scope.labels2.push(inputLabel);
+                console.log($scope.data2);
+            }
         };
     }
     return ChartTwoController;
