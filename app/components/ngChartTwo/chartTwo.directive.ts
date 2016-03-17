@@ -9,8 +9,8 @@ class ChartTwoController {
   
   
   constructor($scope, $timeout) {
-    $scope.labels2 = ['Män', 'Kvinor'];
-    $scope.series2 = ['Män', 'Kvinor'];
+    $scope.labels2 = ['Män', 'Kvinnor'];
+    $scope.series2 = ['Män', 'Kvinnor'];
     $scope.data2 = [
               ["18", "65"],
               

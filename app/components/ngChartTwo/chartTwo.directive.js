@@ -5,10 +5,10 @@
 var ChartTwoController = (function () {
     function ChartTwoController($scope, $timeout) {
         this.data2 = [];
-        $scope.labels2 = ['Män', 'Kvinor'];
-        $scope.series2 = ['Män', 'Kvinor'];
+        $scope.labels2 = ['Män', 'Kvinnor'];
+        $scope.series2 = ['Män', 'Kvinnor'];
         $scope.data2 = [
-            ["352200", "272400"],
+            ["18", "65"],
         ];
         $scope.options = [
             'caleLineWidth: 10',
