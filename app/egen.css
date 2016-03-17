@@ -24,9 +24,3 @@ img.logo {
   opacity: 0.5;
 }
 
-.center {
-    float:none;
-    display:inline-block;
-    vertical-align:middle;
-    margin-right:-4px;
-}
