@@ -15,14 +15,14 @@ Hur skulle ni fördela er föräldrapenning?
   chart-series="series2">
 </canvas> 
 
-
+<span><b>Skriv in hela din årslön nedan</b></span>
  <form 
   name="yourSalary"
   class="yourSalary my-input">   
  
    <input 
    required
-   placeholder="Din årslön här" 
+   placeholder="exempel 310000" 
    ng-model = "yourValue"
    ng-pattern="/^\d+$/" 
    aria-describedby="inputDescription" />
@@ -35,7 +35,8 @@ Hur skulle ni fördela er föräldrapenning?
   ng-class="{ false: 'submit-valid', true: 'submit-invalid'  }[yourSalary.$invalid]" >  
  
  </form>
-
+ 
+<span ng-hide="!showNext"><b>Skriv in din partners årslön nedan</b></span>
  <form 
   ng-hide="!showNext"
   name="partnersSalary"
@@ -43,14 +44,14 @@ Hur skulle ni fördela er föräldrapenning?
  
   <input 
     required
-    placeholder="Din partners årslön" 
+    placeholder="exempel 320000" 
     ng-model = "partnerValue2"
     ng-pattern="/^\d+$/" 
     aria-describedby="inputDescription" />
  
   <input
     type="submit" 
-    ng-click = "addUserValue(partnerValue2, 'Din sambos lön') ; disableButton(2)" 
+    ng-click = "addUserValue(partnerValue2, 'Din partners lön') ; disableButton(2)" 
     value="lägg till"
     ng-disabled="partnersSalary.$invalid || isDisabled2" 
     ng-class="{ false: 'submit-valid', true: 'submit-invalid'  }[partnersSalary.$invalid]" >  
@@ -69,7 +70,9 @@ Hur skulle ni fördela er föräldrapenning?
              ng-model-options="{ getterSetter: true }" />
     </label>
   </form>-->
- 
+ <br>
+ <br>
+ <br>
 </div>
 <h4>Referens:</h4>
 <p>
